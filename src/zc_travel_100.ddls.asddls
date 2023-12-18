@@ -1,10 +1,9 @@
 @AbapCatalog.sqlViewName: 'ZCTRAVEL100'
 @AbapCatalog.compiler.compareFilter: true
-@AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Metadata.allowExtensions: true
 @EndUserText.label: 'consumption view travel'
-define view zc_travel_100 as select from /dmo/travel as Travel
+define root view zc_travel_100 as select from /dmo/travel as Travel
 association [1] to ZI_agency_100 as _Agency
     on $projection.AgencyId = _Agency.AgencyId
     association [1] to zi_customer_100 as _Customer
@@ -20,7 +19,9 @@ association [1] to ZI_agency_100 as _Agency
     Travel.customer_id as CustomerId,
     Travel.begin_date as BeginDate,
     Travel.end_date as EndDate,
+    @Semantics.amount.currencyCode: 'CurrencyCode'    
     Travel.booking_fee as BookingFee,
+    @Semantics.amount.currencyCode: 'CurrencyCode' 
     Travel.total_price as TotalPrice,
     Travel.currency_code as CurrencyCode,
     Travel.description as Description,

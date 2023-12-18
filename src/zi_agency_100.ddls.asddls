@@ -4,7 +4,7 @@
 @EndUserText.label: 'Agency inferface CDS view'
 define view ZI_agency_100 as select from /dmo/agency
 association [1] to I_Country as _Country
-    on $projection.country_code = _Country.Country
+    on $projection.CountryCode = _Country.Country
 {
     
     key /dmo/agency.agency_id as AgencyId,

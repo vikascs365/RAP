@@ -9,7 +9,6 @@ annotate view zc_travel_100 with
   @UI.selectionField: [{ position: 10 }]
   @UI.lineItem: [{ position: 10 }]
   @EndUserText.label: 'Travel Id'
-  @UI.identification: [{ position: 10 }]
   TravelId;
   @UI.selectionField: [{ position: 20 }]
   @UI.lineItem: [{ position: 20 }]
@@ -26,22 +25,27 @@ annotate view zc_travel_100 with
   @Search.defaultSearchElement: true
   @Search.fuzzinessThreshold: 0.70
   CustomerId;
-  //  BeginDate;
-  //  EndDate;
-  //  BookingFee;
+  @UI.identification: [{ position: 40 }]
+  BeginDate;
+  @UI.identification: [{ position: 50 }]
+  EndDate;
+  @UI.identification: [{ position: 60 }]
+  BookingFee;
   @UI.selectionField: [{ position: 40 }]
   @UI.lineItem: [{ position: 40 }]
   @EndUserText.label: 'Total Price'
-  @UI.identification: [{ position: 40 }]
+  @UI.identification: [{ position: 70 }]
   TotalPrice;
   @UI.selectionField: [{ position: 50 }]
   @UI.lineItem: [{ position: 50 }]
   @EndUserText.label: 'Currency Code'
-  @UI.identification: [{ position: 50 }]
+  @UI.identification: [{ position: 80 }]
   CurrencyCode;
   @UI.lineItem: [{ position: 60 }]
+  @UI.identification: [{ position: 90 }]
   Description;
   @UI.lineItem: [{ position: 70 }]
+  @UI.identification: [{ position: 100 }]
   Status;
   //  Createdby;
   //  Createdat;
